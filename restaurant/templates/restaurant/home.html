@@ -1,0 +1,19 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Little Lemon | Home{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="container hero-grid">
+        <div><h1>Little Lemon</h1><h2>Chicago</h2><p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p><a class="button" href="{% url 'booking' %}">Reserve a Table</a></div>
+        <img src="{% static 'restaurant/images/hero.png' %}" alt="Little Lemon restaurant food">
+    </div>
+</section>
+<section class="container specials">
+    <h2>Specials</h2>
+    <div class="cards">
+        <article><h3>Greek Salad</h3><p>Crispy lettuce, peppers, olives and Chicago-style feta, finished with crunchy croutons.</p></article>
+        <article><h3>Bruschetta</h3><p>Grilled bread smeared with garlic and seasoned with salt and olive oil.</p></article>
+        <article><h3>Lemon Dessert</h3><p>A family recipe made with authentic ingredients and a fresh lemon finish.</p></article>
+    </div>
+</section>
+{% endblock %}

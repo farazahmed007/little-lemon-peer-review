@@ -1,0 +1,6 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Little Lemon | Menu{% endblock %}
+{% block content %}
+<section class="container page"><h1>Our Menu</h1><div class="cards">
+{% for item in menu_items %}<article><h3>{{ item.title }}</h3><p>Price: ${{ item.price }}</p><p>Available: {{ item.inventory }}</p></article>{% empty %}<article><h3>Menu</h3><p>No menu items yet. Add items through the API or Django admin.</p></article>{% endfor %}
+</div></section>{% endblock %}

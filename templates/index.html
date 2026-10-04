@@ -1,0 +1,9 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Little Lemon | Index{% endblock %}
+{% block content %}
+<section class="container page">
+  <h1>Little Lemon</h1>
+  <p>Welcome to the Little Lemon restaurant web application.</p>
+  <p><a class="button" href="{% url 'booking' %}">Book a table</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Little Lemon | Reservations{% endblock %}
+{% block content %}
+<section class="container page">
+    <h1>Reservations</h1>
+    <div class="date-filter"><label for="reservation-filter-date">View bookings for a date</label><input id="reservation-filter-date" type="date" value="{{ today }}"></div>
+    <p id="reservation-status" class="help"></p>
+    <h2>Bookings for selected date</h2>
+    <div id="booking-list" class="booking-list"></div>
+    <h2>All bookings as JSON</h2>
+    <pre id="bookings-json" class="json-box">Loading...</pre>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{% static 'restaurant/js/reservations.js' %}"></script>{% endblock %}

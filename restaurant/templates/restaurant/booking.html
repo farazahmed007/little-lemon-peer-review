@@ -1,0 +1,20 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Little Lemon | Book a Table{% endblock %}
+{% block content %}
+<section class="container booking-page">
+    <h1>Reserve a Table</h1>
+    <p class="intro">Please fill out the form below to book a table at Little Lemon.</p>
+    <form id="booking-form" class="booking-form" novalidate>
+        {% csrf_token %}
+        <div class="form-group"><label for="first_name">First name</label><input id="first_name" name="first_name" type="text" required></div>
+        <div class="form-group"><label for="reservation_date">Reservation date</label><input id="reservation_date" name="reservation_date" type="date" min="{{ today }}" value="{{ today }}" required></div>
+        <div class="form-group"><label for="reservation_slot">Reservation slot</label><select id="reservation_slot" name="reservation_slot" required><option value="">Select a time</option></select><small id="slot-status" class="help"></small></div>
+        <div class="form-group"><label for="number_of_guests">Number of guests</label><input id="number_of_guests" name="number_of_guests" type="number" min="1" max="10" value="1" required></div>
+        <div class="form-group"><label for="occasion">Occasion</label><select id="occasion" name="occasion"><option>Birthday</option><option>Anniversary</option><option>Engagement</option><option>Business</option><option>Other</option></select></div>
+        <div id="form-message" class="form-message" role="alert"></div>
+        <button class="button" type="submit">Make Your reservation</button>
+    </form>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{% static 'restaurant/js/booking.js' %}"></script>{% endblock %}
